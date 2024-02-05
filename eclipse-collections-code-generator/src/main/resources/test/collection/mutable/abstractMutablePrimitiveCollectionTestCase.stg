@@ -399,7 +399,7 @@ public abstract class AbstractMutable<name>CollectionTestCase extends Abstract<n
     }
 
     @Override
-    @Test(expected = NoSuchElementException.class)
+    @Test
     public void <type>Iterator_throws_non_empty_collection()
     {
         super.<type>Iterator_throws_non_empty_collection();
@@ -412,7 +412,7 @@ public abstract class AbstractMutable<name>CollectionTestCase extends Abstract<n
         {
             iterator.next();
         }
-        iterator.next();
+        Assert.assertThrows(NoSuchElementException.class, () -> iterator.next());
     }
 
     @Test

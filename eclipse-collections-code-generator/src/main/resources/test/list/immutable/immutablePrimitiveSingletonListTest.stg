@@ -52,11 +52,11 @@ public class Immutable<name>SingletonListTest extends AbstractImmutable<name>Lis
         Assert.assertEquals(<(wideLiteral.(type))("9")>, list1.dotProduct(list2)<(wideDelta.(type))>);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void dotProduct_throwsOnListsOfDifferentSizes()
     {
         Immutable<name>ArrayList list = Immutable<name>ArrayList.newListWith(<["1", "2"]:(literal.(type))(); separator=", ">);
-        this.classUnderTest().dotProduct(list);
+        Assert.assertThrows(IllegalArgumentException.class, () -> this.classUnderTest().dotProduct(list));
     }
 
     @Override

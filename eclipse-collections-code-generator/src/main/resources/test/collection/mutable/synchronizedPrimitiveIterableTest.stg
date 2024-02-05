@@ -62,10 +62,10 @@ public class Synchronized<name>IterableTest extends Abstract<name>IterableTestCa
         return FastList.newListWith(elements);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void null_iterable_throws()
     {
-        Synchronized<name>Iterable.of(null);
+        Assert.assertThrows(IllegalArgumentException.class, () -> Synchronized<name>Iterable.of(null));
     }
 
     @Override
